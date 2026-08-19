@@ -5,7 +5,7 @@ import { z } from 'zod';
 import { useNavigate, Link } from 'react-router-dom';
 import { useAuth } from '../store/authStore';
 import api from '../services/api';
-import { MessageSquare, Lock, Mail, EyeOff, Eye, Loader2, Sun, Moon } from 'lucide-react';
+import { Lock, Mail, EyeOff, Eye, Loader2, Sun, Moon } from 'lucide-react';
 import { useTheme } from '../store/themeStore';
 
 const loginSchema = z.object({

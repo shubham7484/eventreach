@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { User } from '@eventreach/shared';
 import api from '../../services/api';
 import { Check, X, Loader2, Users } from 'lucide-react';
