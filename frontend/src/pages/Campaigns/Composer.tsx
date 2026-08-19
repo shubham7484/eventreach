@@ -1,11 +1,10 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Save, Send, Image, FileText, Plus, X } from 'lucide-react';
 import api from '../../services/api';
 import type { Event, MediaAttachment } from '../../types';
 import { Button } from '../../components/ui/Button';
 import { FileUpload } from '../../components/ui/FileUpload';
-import { Badge } from '../../components/ui/Badge';
 import { useToast } from '../../components/ui/Toast';
 
 const Composer = () => {
@@ -24,8 +23,6 @@ const Composer = () => {
   const [uploadFile, setUploadFile] = useState<File | null>(null);
   const [isUploading, setIsUploading] = useState(false);
   
-  const textAreaRef = useRef<HTMLTextAreaElement>(null);
-
   useEffect(() => {
     const fetchEvents = async () => {
       try {
@@ -57,25 +54,6 @@ const Composer = () => {
     fetchCampaign();
   }, [selectedEventId]);
 
-  const insertVariable = (variable: string) => {
-    if (!textAreaRef.current) return;
-    const cursorPosition = textAreaRef.current.selectionStart;
-    const textBefore = messageText.substring(0, cursorPosition);
-    const textAfter = messageText.substring(cursorPosition, messageText.length);
-    
-    setMessageText(textBefore + variable + textAfter);
-    
-    // Focus and restore cursor
-    setTimeout(() => {
-      if (textAreaRef.current) {
-        textAreaRef.current.focus();
-        textAreaRef.current.setSelectionRange(
-          cursorPosition + variable.length,
-          cursorPosition + variable.length
-        );
-      }
-    }, 0);
-  };
 
   const handleFileUpload = async (file: File) => {
     setIsUploading(true);
@@ -188,19 +166,10 @@ const Composer = () => {
               </select>
             </div>
 
-            <div>
-              <label className="block text-sm font-display text-foreground/80 mb-2">Variables</label>
-              <div className="flex flex-wrap gap-2">
-                <Badge className="cursor-pointer hover:bg-surfaceHover transition-colors" onClick={() => insertVariable('{{fullName}}')}>+ {'{{fullName}}'}</Badge>
-                <Badge className="cursor-pointer hover:bg-surfaceHover transition-colors" onClick={() => insertVariable('{{eventName}}')}>+ {'{{eventName}}'}</Badge>
-                <Badge className="cursor-pointer hover:bg-surfaceHover transition-colors" onClick={() => insertVariable('{{venue}}')}>+ {'{{venue}}'}</Badge>
-              </div>
-            </div>
 
             <div>
               <label className="block text-sm font-display text-foreground/80 mb-2">Message Content</label>
               <textarea
-                ref={textAreaRef}
                 value={messageText}
                 onChange={(e) => setMessageText(e.target.value)}
                 className="w-full h-48 rounded-md border border-border bg-background text-foreground p-3 text-sm focus:ring-2 focus:ring-white/20 outline-none resize-none transition-colors"
