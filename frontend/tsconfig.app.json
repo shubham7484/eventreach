@@ -20,12 +20,7 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "erasableSyntaxOnly": true,
-    "noFallthroughCasesInSwitch": true,
-
-    /* Path Aliases */
-    "paths": {
-      "@eventreach/shared": ["../shared/src/index.ts"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "../shared/src"]
+  "include": ["src"]
 }

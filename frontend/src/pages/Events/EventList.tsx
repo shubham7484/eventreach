@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Plus, Search, Calendar, MapPin } from 'lucide-react';
 import api from '../../services/api';
-import type { Event } from '@eventreach/shared';
+import type { Event } from '../../types';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { Badge } from '../../components/ui/Badge';

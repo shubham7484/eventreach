@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import type { User } from '@eventreach/shared';
+import type { User } from '../../types';
 import api from '../../services/api';
 import { Check, X, Loader2, Users } from 'lucide-react';
 

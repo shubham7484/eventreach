@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Save, Send, Image, FileText, Plus, X } from 'lucide-react';
 import api from '../../services/api';
-import type { Event, MediaAttachment } from '@eventreach/shared';
+import type { Event, MediaAttachment } from '../../types';
 import { Button } from '../../components/ui/Button';
 import { FileUpload } from '../../components/ui/FileUpload';
 import { Badge } from '../../components/ui/Badge';

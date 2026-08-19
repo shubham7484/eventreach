@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, CheckCircle2, XCircle, AlertTriangle, Upload } from 'lucide-react';
 import api from '../../services/api';
-import type { ExtractedContact, Event } from '@eventreach/shared';
+import type { ExtractedContact, Event } from '../../types';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { FileUpload } from '../../components/ui/FileUpload';

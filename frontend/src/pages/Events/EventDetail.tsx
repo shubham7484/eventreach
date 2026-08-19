@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ArrowLeft, Users, Calendar, MapPin, Edit3, Megaphone } from 'lucide-react';
 import api from '../../services/api';
-import type { Event, Campaign } from '@eventreach/shared';
+import type { Event, Campaign } from '../../types';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 

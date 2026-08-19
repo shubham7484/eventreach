@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { ArrowLeft, Send, CheckCircle2, Users, Eye, MessageSquare } from 'lucide-react';
 import api from '../../services/api';
-import type { Contact, Event, MediaAttachment } from '@eventreach/shared';
+import type { Contact, Event, MediaAttachment } from '../../types';
 import { Button } from '../../components/ui/Button';
 import { Badge } from '../../components/ui/Badge';
 import { useToast } from '../../components/ui/Toast';

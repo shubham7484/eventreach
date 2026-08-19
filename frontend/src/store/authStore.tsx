@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import type { ReactNode } from 'react';
-import type { User } from '@eventreach/shared';
+import type { User } from '../types';
 
 interface AuthContextType {
   user: User | null;
